@@ -1,7 +1,7 @@
 # MiniL Syntax Parser - Phase 2
 Student: Mohamed Hesham Abdelhamid
 
-This is the second phase of the MiniL compiler. I have updated my Phase 1 code to include a functional **Syntax Parser** based on the provided CFG.
+This is the second phase of the MiniL compiler. I have updated my Phase 1 code to include a functional "Syntax Parser" based on the provided CFG.
 
 *How this phase was developed :
 
