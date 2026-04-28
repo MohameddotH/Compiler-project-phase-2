@@ -1,13 +1,15 @@
 # MiniL Syntax Parser - Phase 2
-**Student:** Mohamed Hesham Abdelhamid
+Student: Mohamed Hesham Abdelhamid
 
 This is the second phase of the MiniL compiler. I have updated my Phase 1 code to include a functional **Syntax Parser** based on the provided CFG.
 
-### Key Updates from Phase 1:
-* **Language Change:** Updated keywords to `num`, `check`, `then`, `otherwise`, and `repeat` to match the MiniL grammar.
-* **Optimized Scanner:** Refined token rules and simplified the scanner logic for better performance.
-* **Better Error Handling:** Improved line counting to show the exact line number for any syntax error.
-* **Recursive Descent Parser:** Added the logic to validate statements and expressions according to the grammar rules.
+*How this phase was developed :
 
-**How to use:**
+From phase 1 to phase 2: I didn't change the main logic of how the program reads words; I just connected it to the new parser.
+Adding the Logic: I added the rules for the MiniL grammar, so the program can now understand "check-then" statements and "repeat-until" loops
+Fixed Math Order: I made sure the code knows that multiplication and division happen before addition and subtraction.
+Better Error Messages: If you forget a semicolon or a bracket, the program will tell you exactly what’s wrong and which line it's on.
+
+
+**How to use:
 Add your code to `input.txt` to verify if it follows the MiniL syntax rules or to identify specific errors.
