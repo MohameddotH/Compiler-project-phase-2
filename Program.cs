@@ -77,9 +77,18 @@ namespace MiniLParser
 
         private bool Check(string expected) => Current.Value == expected || Current.Type == expected;  
 
-        public void ParseProgram() { ParseStatements(); }  
+        public void ParseProgram() 
+        { 
+            ParseStatements(); 
+            if (Current.Type != "EOF")
+            {
+                throw new Exception($"Syntax Error: Unexpected symbols after program end '{Current.Value}' at line {Current.Line}");
+            }
+        }  
 
         private void ParseStatements() {  
+            if (Current.Type == "EOF" || Check("}") || Check("until") || Check("otherwise")) return;
+
             ParseStatement();  
             if (Check(";")) {
                 Match(";");  
@@ -108,7 +117,7 @@ namespace MiniLParser
                 if (!Check(":=")) throw new Exception($"Syntax Error: Assignment must use ':=' not '{Current.Value}' at line {Current.Line}");  
                 Match(":="); Exp();  
             }  
-            else throw new Exception($"Syntax Error: Error: A statement cannot start with '{Current.Value}' ({Current.Type})");  
+            else throw new Exception($"Syntax Error: A statement cannot start with '{Current.Value}' ({Current.Type})");  
         }  
 
         private void Cond() {  
@@ -148,7 +157,6 @@ namespace MiniLParser
         [STAThread]
         static void Main()  
         {  
-            // الـ Main الجديدة المختصرة لتشغيل الـ GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MiniLGui());
@@ -239,4 +247,4 @@ namespace MiniLParser
             }
         }
     }
-}    
+}
