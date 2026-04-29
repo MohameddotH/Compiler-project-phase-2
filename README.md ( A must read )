@@ -1,15 +1,25 @@
-# MiniL Syntax Parser - Phase 2
-Student: Mohamed Hesham Abdelhamid
+Student: Mohamed Hesham Abdelhamid Saber
+ID: 324243444
 
-This is the second phase of the MiniL compiler. I have updated my Phase 1 code to include a functional "Syntax Parser" based on the provided CFG.
-
-*How this phase was developed :
-
-From phase 1 to phase 2: I didn't change the main logic of how the program reads words; I just connected it to the new parser.
-Adding the Logic: I added the rules for the MiniL grammar, so the program can now understand "check-then" statements and "repeat-until" loops
-Fixed Math Order: I made sure the code knows that multiplication and division happen before addition and subtraction.
-Better Error Messages: If you forget a semicolon or a bracket, the program will tell you exactly what’s wrong and which line it's on.
+Project: MiniL Language Syntax Parser
 
 
-**How to use:
-Add your code to `input.txt` to verify if it follows the MiniL syntax rules or to identify specific errors.
+What this project does?
+This program is a Compiler Construction tool. It takes code written in the "MiniL" language and checks it.
+
+Evolution: Phase 1 to Phase 2
+
+Phase 1: We focused only on the Scanner. The goal was just to recognize the words and symbols.
+Phase 2: We built the Parser. Now the program doesn't just see words; it understands the structure of the logic, like how check-then and repeat-until loops are built.
+
+
+Development with **VS Code**
+
+Working in the VS Code environment presented a challenge that required a more advanced solution than a standard console:
+
+*The Solution: Instead of using the basic terminal, I implemented a GUI (Graphical User Interface) using Windows Forms.
+*Implementation: 
+1- I modified the main code to work with the new interface.
+2- I built a GUI using C# Windows Forms to replace the terminal, allowing the parser to process text directly from the screen.
+3- I connected the Scanner and Parser to the GUI to process the code and display the tokens in a table once the button is clicked.
+*The Result: Every test case I type in the GUI gives me an immediate answer if the syntax is valid.
