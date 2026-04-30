@@ -28,3 +28,10 @@ Working in the VS Code environment presented a challenge that required a more ad
 2- I built a GUI using C# Windows Forms to replace the terminal, allowing the parser to process text directly from the screen.
 3- I connected the Scanner and Parser to the GUI to process the code and display the tokens in a table once the button is clicked.
 *The Result: Every test case I type in the GUI gives me an immediate answer if the syntax is valid.
+
+
+
+
+
+
+Unimportant note :Every decision in this project was made independently over roughly 35 hours of work, and I hope the effort and thought behind each choice is recognized in the final result.
