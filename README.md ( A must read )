@@ -7,10 +7,15 @@ Project: MiniL Language Syntax Parser
 What this project does?
 This program is a Compiler Construction tool. It takes code written in the "MiniL" language and checks it.
 
-Evolution: Phase 1 to Phase 2
 
-Phase 1: We focused only on the Scanner. The goal was just to recognize the words and symbols.
-Phase 2: We built the Parser. Now the program doesn't just see words; it understands the structure of the logic, like how check-then and repeat-until loops are built.
+##Implementation Challenges & Design Choices in :
+
+*Semicolon as a Separator: The ; is implemented as a separator between statements rather than a strict terminator. This allows the parser to recursively chain multiple commands while correctly identifying the end of a block.
+*Handling Assignments: Made the parser start directly with an Identifier, so x := 10; is valid. I found this approach cleaner since type keywords like num and text are not needed for the parser to correctly identify and process assignments.
+*Conditions & Parentheses:Made the parser accept conditions like check x > 5 without parentheses, since the logic is valid without them.
+*EOF check: Added a check for extra tokens after parsing ends, throwing a Syntax Error if any remain, to ensure no invalid code is silently accepted.
+*Empty Statement (ε): Added a safe exit to ParseStatements() when it encounters EOF, }, until, or otherwise, to prevent the parser from crashing at the end of a block.
+
 
 
 Development with **VS Code**
